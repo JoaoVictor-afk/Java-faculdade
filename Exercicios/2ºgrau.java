@@ -23,6 +23,7 @@ class Grau {
         delta =((b*b)-(4*a*c));
 
         if(delta>=0){
+            
             x1 =  (-b + Math.sqrt (delta))  / ( 2*a );
             x2 =  (-b - Math.sqrt (delta)) / ( 2*a );
 
