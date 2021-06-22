@@ -1,45 +1,57 @@
 class Empregado
 {
-public Empregado(String n, double s ) {
+private String nome;
+private double salario;
+private double salarioanual;
+public double salarioanualaumento;
+private String sobrenome;
+
+public Empregado(String n, String sobre ,double s ) {
     nome=n;
     salario=s;
-    id=0;
+    sobrenome=sobre;
 }
+public Empregado() {
+}
+
 public String getNome(){
     return nome;
 }
+public String getSobreome(){
+    return sobrenome;
+}
 public double getSalario(){
-    return salario;
-}
-public int getId(){
-    return id;
-}
-public void setId(){
-    id=nextId;
-    nextId++;
-}
-public static int getNextId(){
-    return nextId;
+    if (salario>0){
+        return salario;
+    }
+    else return salario=0.0;
 }
 
-    public static void main(String args []){
+public double getSalarioanual(){
+    if(salario>0){
+         return salarioanual=(salario*12) ; 
+    }
+    else return salarioanual=0.0;
+}
+public double getSalarioanualaumento(){
+    if(salario>0){
+        return salarioanualaumento=(salario*12*0.10+salarioanual);
+    }
+    else return salarioanualaumento=0.0;
+}
+public static class empregadoTeste {
+    public static void main (String args []){
        Empregado[] ficha= new Empregado[3];
 
-       ficha[0]= new Empregado("Dourado",2000);
-       ficha[1]= new Empregado("João",6000);
-       ficha[2]= new Empregado("Fred",5000);
+       ficha[0]= new Empregado("Dourado","Rodrigo",2000);
+       ficha[1]= new Empregado("João","Victor",6000);
+       ficha[2]= new Empregado("Fred","Carlos",5000);
     for(Empregado e : ficha){
-        e.setId();
         
-        System.out.println("Nome= "+e.getNome());
-        System.out.println("Id= "+e.getId());
-        System.out.println("Salário= "+e.getSalario());
+        System.out.println("Nome="+e.getNome()+" Sobrenome="+e.getSobreome()+" Salário="+e.getSalario()+" Salário anual="+e.getSalarioanual());
+        System.out.println("Salário com aumento de 10%= "+e.getSalarioanualaumento());
     }
-    int nextid= Empregado.getNextId();
-    System.out.println("Proximo id:"+nextid);
-}
-private String nome;
-private double salario;
-private int id;
-private static int nextId;
+   }
+ }
+
 }
