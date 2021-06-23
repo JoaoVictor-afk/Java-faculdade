@@ -36,8 +36,6 @@ public class media {
                 if(nota[indice]==-1){
                     System.out.println("Tchau!");
                     System.exit(0);
-                    break;
-
                 }
                
             }
