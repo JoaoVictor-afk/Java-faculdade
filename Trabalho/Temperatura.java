@@ -18,17 +18,17 @@ public class Temperatura {
     
             if(unitPara=='a')
             {
-            return value;
+                return value;
             }
             else if(unitPara=='b') 
             {
-            double newvalue=(1.8 * value) + 32;
-            return newvalue;
+                double newvalue=(1.8 * value) + 32;
+                return newvalue;
             }
-        else if(unitPara=='c') 
+            else if(unitPara=='c') 
             {
-            double newvalue = value + 273.15;
-            return newvalue;
+                double newvalue = value + 273.15;
+                return newvalue;
             }     
        
        return 0;     
@@ -226,11 +226,11 @@ public class Temperatura {
         public static void main( String[] args ){  
               
             	            	
-            char   scaleDe = ' ';  
-            char   scalePara   = ' ';   
+            char   scaleDe= ' ';  
+            char   scalePara= ' ';   
               
-            double tempDe  = 0.0;   
-            double result    = 0.0; 
+            double tempDe= 0.0;   
+            double result= 0.0; 
         do {  
                   
                 
